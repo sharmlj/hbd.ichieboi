@@ -18,6 +18,23 @@ window.addEventListener('load', () => {
     });
 });
 
+// Background color transitions
+const bgColors = [
+    'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', // purple - initial
+    'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)', // pink - class one
+    'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)', // blue - class two
+    'linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)', // green - class three
+    'linear-gradient(135deg, #fa709a 0%, #fee140 100%)', // orange - class four
+    'linear-gradient(135deg, #30cfd0 0%, #330867 100%)', // teal - class five
+    'linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)', // pastel - class six
+    'linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%)', // light pink - class seven
+    'linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)', // peach - class eight
+    'linear-gradient(135deg, #ff6e7f 0%, #bfe9ff 100%)'  // coral - class nine
+];
+
+function changeBg(colorIndex) {
+    document.querySelector('.container').style.background = bgColors[colorIndex];
+}
 
 // animation timeline
 const animationTimeline = () => {
@@ -51,11 +68,13 @@ const animationTimeline = () => {
     const tl = new TimelineMax();
 
     tl.to(".container", 0.6, {
-        visibility: "visible"
+        visibility: "visible",
+        onStart: () => changeBg(0)
     })
     .from(".one", 0.7, {
         opacity: 0,
-        y: 10
+        y: 10,
+        onStart: () => changeBg(1)
     })
     .from(".two", 0.4, {
         opacity: 0,
@@ -77,7 +96,8 @@ const animationTimeline = () => {
     "-=1")
     .from(".three", 0.7, {
         opacity: 0,
-        y: 10
+        y: 10,
+        onStart: () => changeBg(2)
     })
     .to(".three",
         0.7,
@@ -89,6 +109,7 @@ const animationTimeline = () => {
     .from(".four", 0.7, {
         scale: 0.2,
         opacity: 0,
+        onStart: () => changeBg(3)
     })
     .from(".fake-btn", 0.3, {
         scale: 0.2,
@@ -113,7 +134,10 @@ const animationTimeline = () => {
             y: -150
         },
     "+=1")
-    .from(".idea-1", 0.7, ideaTextTrans)
+    .from(".idea-1", 0.7, {
+        ...ideaTextTrans,
+        onStart: () => changeBg(4)
+    })
     .to(".idea-1", 0.7, ideaTextTransLeave, "+=2.5")
     .from(".idea-2", 0.7, ideaTextTrans)
     .to(".idea-2", 0.7, ideaTextTransLeave, "+=2.5")
@@ -195,6 +219,7 @@ const animationTimeline = () => {
             x: 25,
             y: -25,
             rotationZ: -45,
+            onStart: () => changeBg(5)
         },
         "-=2"
     )
@@ -209,7 +234,6 @@ const animationTimeline = () => {
         0.7, {
             opacity: 0,
             y: -50,
-            // scale: 0.3,
             rotation: 150,
             skewX: "30deg",
             ease: Elastic.easeOut.config(1, 0.5),
@@ -224,7 +248,7 @@ const animationTimeline = () => {
         }, {
             scale: 1,
             rotationY: 0,
-            color: "#ff69b4",
+            color: "#fff",
             ease: Expo.easeOut,
         },
         0.1,
@@ -247,6 +271,7 @@ const animationTimeline = () => {
             scale: 80,
             repeat: 3,
             repeatDelay: 1.4,
+            onStart: () => changeBg(6)
         },
         0.3
     )
@@ -255,7 +280,10 @@ const animationTimeline = () => {
         y: 30,
         zIndex: "-1",
     })
-    .staggerFrom(".nine p", 1, ideaTextTrans, 1.2)
+    .staggerFrom(".nine p", 1, {
+        ...ideaTextTrans,
+        onStart: () => changeBg(7)
+    }, 1.2)
     .to(
         ".last-smile",
         0.5, {
@@ -270,3 +298,4 @@ const animationTimeline = () => {
         tl.restart();
     });
 }
+  
