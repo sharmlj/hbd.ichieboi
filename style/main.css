@@ -3,7 +3,7 @@ html {
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   margin: 0;
 }
 
@@ -19,6 +19,8 @@ body {
   text-align: center;
   visibility: hidden;
   width: 100vw;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  transition: background 0.8s ease;
 }
 
 .container > div {
@@ -30,15 +32,20 @@ body {
 
 .one {
   font-size: 4.5rem;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .two {
   font-size: 1.2rem;
   font-weight: lighter;
+  color: #fff;
 }
 
 .three {
   font-size: 3rem;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .four .text-box {
@@ -48,6 +55,7 @@ body {
   padding: 10px;
   position: relative;
   width: 600px;
+  background: rgba(255, 255, 255, 0.95);
 }
 
 .text-box p {
@@ -64,7 +72,7 @@ body {
   border-radius: 3px;
   bottom: -50px;
   color: #fff;
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
   position: absolute;
   right: 5px;
 }
@@ -74,6 +82,8 @@ body {
   left: 0;
   position: absolute;
   right: 0;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .idea-3 strong {
@@ -86,14 +96,17 @@ body {
   font-size: 4rem;
 }
 
-.idea-5 span, .idea-6 span, .wish-hbd span {
+.idea-5 span,
+.idea-6 span,
+.wish-hbd span {
   display: inline-block;
 }
 
-.idea-6 span{
+.idea-6 span {
   font-size: 15rem;
+  color: #fff;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
 }
-
 
 .six {
   position: relative;
@@ -105,13 +118,11 @@ body {
   display: inline-block;
   height: 350px;
   max-width: 100%;
-  /* height: auto; */
 }
 
 .six .hat {
   left: 41.5%;
   position: absolute;
-  /* transform: scale(0.1); */
   top: -35%;
   width: 80px;
 }
@@ -133,7 +144,8 @@ body {
   left: 30%;
 }
 
-.seven, .eight {
+.seven,
+.eight {
   height: 100vh;
   position: fixed;
   top: 0;
@@ -207,17 +219,23 @@ body {
   font-size: 3em;
   margin: 0;
   text-transform: uppercase;
+  color: #fff;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
 }
 
 .wish h5 {
   font-size: 2rem;
   font-weight: lighter;
   margin: 10px 0 0;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .nine p {
   font-size: 2rem;
   font-weight: lighter;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 #replay {
@@ -273,7 +291,6 @@ body {
   }
 
   .six .hat {
-    /* top: -20px; */
     width: 50px;
   }
 
