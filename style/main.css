@@ -1,10 +1,13 @@
 html {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
+  overflow-x: hidden;
+  background-color: #fff;
 }
 
 .song {
@@ -41,6 +44,7 @@ body {
   font-size: 3rem;
 }
 
+/* Kotak teks */
 .four .text-box {
   border: 3px solid #aaa;
   border-radius: 5px;
@@ -48,6 +52,7 @@ body {
   padding: 10px;
   position: relative;
   width: 600px;
+  max-width: 90%;
 }
 
 .text-box p {
@@ -89,15 +94,18 @@ body {
   font-size: 4rem;
 }
 
-.idea-5 span, .idea-6 span, .wish-hbd span {
+.idea-5 span, 
+.idea-6 span, 
+.wish-hbd span {
   display: inline-block;
 }
 
-.idea-6 span{
+.idea-6 span {
   font-size: 15rem;
+  line-height: 1;
 }
 
-/* PERBAIKAN BUG FOTO DAN TOPI */
+/* FOTO DAN TOPI */
 .six {
   position: relative;
   top: 10vh;
@@ -120,8 +128,8 @@ body {
   transform: translateX(-50%) rotate(-20deg);
   width: 80px;
 }
-/* AKHIR PERBAIKAN BUG FOTO DAN TOPI */
 
+/* BALON */
 .baloons img {
   display: inline-block;
   position: absolute;
@@ -140,7 +148,9 @@ body {
   left: 30%;
 }
 
-.seven, .eight {
+/* BAGIAN KONFETI */
+.seven, 
+.eight {
   height: 100vh;
   position: fixed;
   top: 0;
@@ -155,7 +165,8 @@ body {
   width: 25px;
   z-index: -1;
 }
-/* ... (aturan SVG tetap) ... */
+
+/* Warna konfeti */
 .eight svg:nth-child(1) { fill: #bd6ecf; left: 5vw; top: 7vh; }
 .eight svg:nth-child(2) { fill: #7dd175; left: 35vw; top: 23vh; }
 .eight svg:nth-child(3) { fill: #349d8b; left: 23vw; top: 33vh; }
@@ -166,24 +177,24 @@ body {
 .eight svg:nth-child(8) { fill: #8762cb; left: 37vw; top: 86vh; }
 .eight svg:nth-child(9) { fill: #9a90da; left: 87vw; top: 94vh; }
 
-/* PERBAIKAN JARAK UCAPAN */
+/* UCAPAN */
 .wish-hbd {
   font-size: 3em;
-  margin-top: 20px; /* Tambahkan sedikit margin atas setelah foto */
-  margin-bottom: 5px; /* Jarak antara h3 dan h5 */
+  margin-top: 20px;
+  margin-bottom: 5px;
   text-transform: uppercase;
-  line-height: 1.1; /* Renggangkan jarak antar baris */
+  line-height: 1.1;
 }
 
 .wish h5 {
   font-size: 2rem; 
   font-weight: lighter;
   margin-top: 5px;
-  margin-bottom: 20px; /* Tambahkan sedikit margin bawah sebelum elemen berikutnya */
-  line-height: 1.3; /* Renggangkan jarak antar baris doa */
+  margin-bottom: 20px;
+  line-height: 1.3;
 }
-/* AKHIR PERBAIKAN JARAK UCAPAN */
 
+/* Bagian terakhir */
 .nine p {
   font-size: 2rem;
   font-weight: lighter;
@@ -194,67 +205,111 @@ body {
   z-index: 3;
 }
 
-/* Media Queries */
-@media screen and (max-height: 1000px) {
-  /* Hapus penyesuaian topi yang tidak perlu karena sudah diperbaiki dengan transform */
-}
+/* ===================================
+   🌐 RESPONSIVE DESIGN (MOBILE)
+   =================================== */
 
-@media screen and (max-height: 800px) {
-  /* Hapus penyesuaian topi yang tidak perlu */
-}
-
-@media screen and (max-height: 700px) {
-  /* Hapus penyesuaian topi yang tidak perlu */
-}
-
-@media screen and (max-height: 850px) and (max-width: 450px) {
-  /* Hapus penyesuaian topi yang tidak perlu */
-}
-
-@media screen and (max-width: 500px) {
-  .container {
-    width: 90%;
+/* Tablet */
+@media screen and (max-width: 768px) {
+  .one {
+    font-size: 8vw;
   }
+  .three {
+    font-size: 6vw;
+  }
+  .five p {
+    font-size: 1.6rem;
+  }
+  .six img {
+    height: 300px;
+  }
+  .idea-6 span {
+    font-size: 12rem;
+  }
+}
 
+/* HP sedang */
+@media screen and (max-width: 600px) {
+  .container {
+    width: 95%;
+  }
   .four .text-box {
     width: 90%;
+    max-width: 500px;
   }
-
   .text-box .fake-btn {
-    bottom: -38px;
+    bottom: -40px;
     right: 5px;
   }
-
-  .idea-5 span {
-    display: block;
+  .five p {
+    font-size: 1.5rem;
   }
-
+  .idea-5 {
+    font-size: 2.5rem;
+  }
   .idea-6 span {
     font-size: 10rem;
   }
-
-  .six .hat {
-    width: 50px;
+  .six img {
+    height: 250px;
   }
-  
-  /* PENYESUAIAN JARAK UNTUK LAYAR KECIL */
+  .six .hat {
+    width: 60px;
+    top: -30%;
+  }
   .wish-hbd {
-    font-size: 2.2em;
+    font-size: 2.4em;
     margin-top: 15px;
     margin-bottom: 3px;
     line-height: 1.2;
   }
-
   .wish h5 {
     font-size: 1.4rem;
     margin-top: 3px;
     margin-bottom: 15px;
     line-height: 1.4;
   }
-  /* AKHIR PENYESUAIAN JARAK UNTUK LAYAR KECIL */
-
   .nine p {
     font-size: 1.5rem;
-    font-weight: lighter;
+  }
+}
+
+/* HP kecil (≤ 430px) */
+@media screen and (max-width: 430px) {
+  .one {
+    font-size: 9vw;
+  }
+  .three {
+    font-size: 7vw;
+  }
+  .four .text-box {
+    padding: 8px;
+  }
+  .five p {
+    font-size: 1.3rem;
+  }
+  .idea-5 {
+    font-size: 2.2rem;
+  }
+  .idea-6 span {
+    font-size: 8rem;
+  }
+  .six img {
+    height: 220px;
+  }
+  .six .hat {
+    width: 50px;
+    top: -28%;
+  }
+  .wish-hbd {
+    font-size: 2em;
+    line-height: 1.2;
+  }
+  .wish h5 {
+    font-size: 1.2rem;
+    line-height: 1.4;
+  }
+  .nine p {
+    font-size: 1.3rem;
   }
 }
